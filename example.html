@@ -11,8 +11,9 @@
 
   <body>
     <h1></h1>
-    <button>Click me</button>
-    <button>Click me</button>
+    <button>Add Tally</button>
+    <button>Add Tally</button>
+    <p id=tallies></p>
     <script>
     addEventListener('load', () => {
       $('h1').textContent = "Hello, world"
@@ -20,6 +21,11 @@
       $('button').forEach(console.log)
 
       $('button').addEventListener('click', console.log)
+
+      $('button').addEventListener('click', () => {
+        $('#tallies').textContent += 1
+      })
+      
     })
     </script>
   </body>
