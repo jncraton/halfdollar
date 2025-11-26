@@ -5,9 +5,9 @@ lint:
 format:
 	npx prettier@3.6.2 --write .
 
-smalldollar.min.js: smalldollar.js
+halfdollar.min.js: halfdollar.js
 	npx -y uglify-js@3.19.3 --compress --mangle -- $< > $@
 	wc -c $@
 
 clean:
-	rm -f smalldollar.min.js
+	rm -f halfdollar.min.js

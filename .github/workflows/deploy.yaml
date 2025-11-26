@@ -30,7 +30,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build
-        run: make smalldollar.min.js
+        run: make halfdollar.min.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
