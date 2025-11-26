@@ -4,9 +4,15 @@ const $ = q => new Proxy(document.querySelectorAll(q), {
       return target[prop]
     }
 
-    return (...args) => target.forEach(el => {
-      el[prop](...args)
-    })
+    if (target.length == 1) {
+      return target[0][prop]
+    }
+
+    if (typeof target[0][prop] == 'function') {
+      return (...args) => target.forEach(el => {
+        el[prop](...args)
+      })
+    }
   },
   set(target, prop, value, receiver) {
     if (prop in target) {
