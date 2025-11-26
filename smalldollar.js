@@ -14,14 +14,9 @@ const $ = q =>
           el[prop](...args)
         })
     },
-    set(target, prop, value, receiver) {
-      if (prop in target) {
-        return Reflect.set(target, prop, value, receiver)
-      }
-
-      target.forEach(el => {
+    set(target, prop, value) {
+      [...target].forEach(el => {
         el[prop] = value
       })
-      return true
     },
   })
