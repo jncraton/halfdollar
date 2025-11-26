@@ -9,12 +9,12 @@ A minimal jQuery-like JS library
 
 This is somewhat similar to tools such as [cash](https://github.com/fabiospampinato/cash), but it sticks much closer to vanilla JavaScript.
 
-Like jQuery, the `$` function here acts as a factory for creating references to DOM nodes. Unlike jQuery, we directly return an `Array` of DOM elements. We override the behavior of setting properties on the `Array` as follows:
+Like jQuery, the `$` function here acts as a factory for creating references to DOM nodes. Unlike jQuery, we directly return an `Array` of DOM elements. We override the behavior of getting properties on the `Array` as follows:
 
-1. Get the property if it exists on the array
-2. Otherwise, if the array has at least two elements, return a
-   wrapper calling the property on each array item
-3. Otherwise, return that attribute of the first array element
+1. Get the property if it exists on the `Array` (`length`, `map`, etc)
+2. Otherwise, if the `Array` has at least two elements, return a
+   wrapper calling the property on each array item (`addEventListener`, etc)
+3. Otherwise, return that property of the first array element (`textContent`, etc)
 
 The methods that can be used on the elements returned by the factory function are the same methods that can be used with native `Element` objects. The functions will simply be applied to all elements in the collection.
 
