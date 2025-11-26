@@ -22,6 +22,6 @@ smalldollar
 
 ```js
 $('button').addEventListener('click' () => {
-  $('#tallies').textContent += 1
+  $('#tallies').textContent += '|'
 })
 ```
