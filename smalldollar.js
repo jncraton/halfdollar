@@ -10,7 +10,10 @@ const proxy = {
     if (prop in target) {
       return Reflect.set(target, prop, value, receiver)
     }
-    console.warn(`Attempted to set undefined property "${prop}" to`, value)
+
+    target.forEach(el => {
+      el[prop] = value
+    })
     return true
   }
 }
