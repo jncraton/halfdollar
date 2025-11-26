@@ -5,6 +5,8 @@
 
 A minimal jQuery-like JS library
 
+[smalldollar.min.js](https://jncraton.github.io/smalldollar/smalldollar.min.js)
+
 ## Examples
 
 VanillaJS
