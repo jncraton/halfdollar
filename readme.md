@@ -1,5 +1,7 @@
 # smalldollar
 
+[![Lint](https://github.com/jncraton/smalldollar/actions/workflows/lint.yml/badge.svg)](https://github.com/jncraton/smalldollar/actions/workflows/lint.yml)
+
 A minimal jQuery-like JS library
 
 ## Examples
