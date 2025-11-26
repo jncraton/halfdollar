@@ -35,9 +35,6 @@ const $ = q =>
        * Return a wrapper function to call the named function on each of
        * our children.
        */
-      return (...args) =>
-        target.forEach(el => {
-          el[prop](...args)
-        })
+      return (...args) => target.map(el => el[prop](...args))
     },
   })
