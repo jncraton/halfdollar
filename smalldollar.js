@@ -31,6 +31,10 @@ const $ = q =>
         return target[0][prop]
       }
 
+      /*
+       * Return a wrapper function to call the named function on each of
+       * our children.
+       */
       return (...args) =>
         target.forEach(el => {
           el[prop](...args)
