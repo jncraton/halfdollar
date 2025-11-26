@@ -1,4 +1,4 @@
-const proxy = {
+const $ = q => new Proxy(document.querySelectorAll(q), {
   get(target, prop) {
     if (!(prop in target)) {
       console.warn(`Attempted to read undefined property "${prop}"`)
@@ -18,6 +18,4 @@ const proxy = {
     })
     return true
   }
-}
-
-const $ = q => new Proxy(document.querySelectorAll(q), proxy)
+})
