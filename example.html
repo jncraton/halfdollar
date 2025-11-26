@@ -16,7 +16,10 @@
     <p id="tallies"></p>
     <script>
       addEventListener('load', () => {
-        $('h1').textContent = 'Hello, world'
+        console.assert($('video').length === 0)
+
+        $('h1').textContent = 'a'
+        console.assert($('h1').textContent === 'a')
 
         $('button').forEach(console.log)
 
