@@ -2,7 +2,9 @@ const proxy = {
   get(target, prop) {
     if (!(prop in target)) {
       console.warn(`Attempted to read undefined property "${prop}"`)
-      return undefined
+      return (...args) => target.forEach(el => {
+        el[prop](...args)
+      })
     }
     return target[prop]
   },
