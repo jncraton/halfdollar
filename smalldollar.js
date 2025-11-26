@@ -15,7 +15,7 @@ const $ = q =>
         })
     },
     set(target, prop, value) {
-      [...target].forEach(el => {
+      ;[...target].forEach(el => {
         el[prop] = value
       })
     },
