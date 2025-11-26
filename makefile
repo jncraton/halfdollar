@@ -8,3 +8,6 @@ format:
 smalldollar.min.js: smalldollar.js
 	npx uglify-js@3.19.3 --compress --mangle -- $< > $@
 	wc -c $@
+
+clean:
+	rm -f smalldollar.min.js
