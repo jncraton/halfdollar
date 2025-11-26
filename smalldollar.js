@@ -14,9 +14,5 @@ const $ = q =>
           el[prop](...args)
         })
     },
-    set: (target, prop, value) => {
-      ;[...target].forEach(el => {
-        el[prop] = value
-      })
-    },
+    set: (target, prop, value) => target.map(el => (el[prop] = value)),
   })
