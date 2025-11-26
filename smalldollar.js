@@ -1,7 +1,6 @@
 const $ = q => new Proxy(document.querySelectorAll(q), {
   get(target, prop) {
     if (!(prop in target)) {
-      console.warn(`Attempted to read undefined property "${prop}"`)
       return (...args) => target.forEach(el => {
         el[prop](...args)
       })
