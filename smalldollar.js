@@ -1,5 +1,5 @@
 const $ = q =>
-  new Proxy(document.querySelectorAll(q), {
+  new Proxy([...document.querySelectorAll(q)], {
     /*
      * Intercept calls to the NodeList returned by querySelectorAll
      * using a Proxy:
@@ -11,7 +11,7 @@ const $ = q =>
      * We exchange the ability to modify the NodeList
      * and simply pass any modification on to every child element
      */
-    set: (target, prop, value) => target.forEach(el => (el[prop] = value)),
+    set: (target, prop, value) => target.map(el => (el[prop] = value)),
     /*
      * `get` is more complicated
      *
