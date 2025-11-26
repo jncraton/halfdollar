@@ -23,18 +23,17 @@ const $ = q =>
      * properties (such as textContent).
      */
     get: (target, prop) => {
+      // Return the property directly if it exists on the Array
       if (prop in target) {
         return target[prop]
       }
 
-      if (target.length == 1) {
-        return target[0][prop]
+      // Return a wrapper function when we have multiple children
+      if (target[1]) {
+        return (...args) => target.map(el => el[prop](...args))
       }
 
-      /*
-       * Return a wrapper function to call the named function on each of
-       * our children.
-       */
-      return (...args) => target.map(el => el[prop](...args))
+      // Return the propertry from a child when we only have one
+      return target[0][prop]
     },
   })
