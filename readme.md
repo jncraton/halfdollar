@@ -9,18 +9,11 @@ A minimal jQuery-like JS library
 
 This is somewhat similar to tools such as [cash](https://github.com/fabiospampinato/cash), but it sticks much closer to vanilla JavaScript.
 
-Like jQuery, the `$` function here acts as a factory for creating references to DOM nodes. Unlike jQuery, we directly return an `Array` of DOM elements. We override the behavior of getting properties on the `Array` as follows:
-
-1. Get the property directly if it exists on the `Array` (`length`, `map`, etc)
-2. Otherwise, if the `Array` has at least two elements, return a
-   wrapper calling the property on each array item (`addEventListener`, etc)
-3. Otherwise, return that property of the first array element (`textContent`, etc)
-
-The methods that can be used on the elements returned by the factory function are the same methods that can be used with native `Element` objects. The functions will simply be applied to all elements in the collection.
+Like jQuery, the `$` function here acts as a factory for creating references to DOM nodes.
 
 ## Examples
 
-VanillaJS
+Vanilla JavaScript
 
 ```js
 const buttons = document.querySelectorAll('button')
@@ -39,4 +32,194 @@ halfdollar
 $('button').addEventListener('click' () => {
   $('#tallies').textContent += '|'
 })
+```
+
+## API
+
+The following methods and properties interact with the Array of Element objects as an Array:
+
+```js
+at()
+concat()
+copyWithin()
+entries()
+every()
+fill()
+filter()
+find()
+findIndex()
+findLast()
+findLastIndex()
+flat()
+flatMap()
+forEach()
+includes()
+indexOf()
+join()
+keys()
+lastIndexOf()
+map()
+pop()
+push()
+reduce()
+reduceRight()
+reverse()
+shift()
+slice()
+some()
+sort()
+splice()
+toLocaleString()
+toReversed()
+toSorted()
+toSpliced()
+toString()
+unshift()
+values()
+with()
+length
+```
+
+The following methods will pass through to every selected Element object:
+
+```js
+after()
+animate()
+append()
+attachShadow()
+before()
+checkVisibility()
+closest()
+computedStyleMap()
+getAnimations()
+getAttribute()
+getAttributeNames()
+getAttributeNode()
+getAttributeNodeNS()
+getAttributeNS()
+getBoundingClientRect()
+getClientRects()
+getElementsByClassName()
+getElementsByTagName()
+getElementsByTagNameNS()
+getHTML()
+hasAttribute()
+hasAttributeNS()
+hasAttributes()
+hasPointerCapture()
+insertAdjacentElement()
+insertAdjacentHTML()
+insertAdjacentText()
+matches()
+moveBefore()
+prepend()
+querySelector()
+querySelectorAll()
+releasePointerCapture()
+remove()
+removeAttribute()
+removeAttributeNode()
+removeAttributeNS()
+replaceChildren()
+replaceWith()
+requestFullscreen()
+requestPointerLock()
+scroll()
+scrollBy()
+scrollIntoView()
+scrollTo()
+setAttribute()
+setAttributeNode()
+setAttributeNodeNS()
+setAttributeNS()
+setHTMLUnsafe()
+setPointerCapture()
+toggleAttribute()
+```
+
+The following properties will be set for all selected Element objects and read from the first selected Element when only a single element is selected:
+
+```js
+ariaActiveDescendantElement
+ariaAtomic
+ariaAutoComplete
+ariaBrailleLabel
+ariaBrailleRoleDescription
+ariaBusy
+ariaChecked
+ariaColCount
+ariaColIndex
+ariaColIndexText
+ariaColSpan
+ariaControlsElements
+ariaCurrent
+ariaDescribedByElements
+ariaDescription
+ariaDetailsElements
+ariaDisabled
+ariaErrorMessageElements
+ariaExpanded
+ariaFlowToElements
+ariaHasPopup
+ariaHidden
+ariaInvalid
+ariaKeyShortcuts
+ariaLabel
+ariaLabelledByElements
+ariaLevel
+ariaLive
+ariaModal
+ariaMultiLine
+ariaMultiSelectable
+ariaOrientation
+ariaOwnsElements
+ariaPlaceholder
+ariaPosInSet
+ariaPressed
+ariaReadOnly
+ariaRequired
+ariaRoleDescription
+ariaRowCount
+ariaRowIndex
+ariaRowIndexText
+ariaRowSpan
+ariaSelected
+ariaSetSize
+ariaSort
+ariaValueMax
+ariaValueMin
+ariaValueNow
+ariaValueText
+assignedSlot
+attributes
+childElementCount
+children
+classList
+className
+clientHeight
+clientLeft
+clientTop
+clientWidth
+currentCSSZoom
+elementTiming
+Experimental
+firstElementChild
+id
+innerHTML
+lastElementChild
+localName
+namespaceURI
+nextElementSibling
+outerHTML
+part
+prefix
+previousElementSibling
+role
+scrollHeight
+scrollLeft
+scrollTop
+scrollWidth
+shadowRoot
+slot
+tagName
 ```
