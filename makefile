@@ -6,7 +6,7 @@ format:
 	npx prettier@3.6.2 --write .
 
 halfdollar.min.js: halfdollar.js
-	npx --package uglify-js@3.19.3 --quiet uglifyjs --compress --mangle -- $< > $@
+	npx --package uglify-js@3.19.3 --quiet uglifyjs --compress --mangle eval -- $< > $@
 	wc -c $@
 
 clean:
