@@ -7,24 +7,26 @@ const $ = q =>
      * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
      *
      */
-    set: (target, prop, value) => target.map(el => (el[prop] = value)),
-    /*
-     * Sets appropriate values
-     *
-     * We exchange the ability to modify the Array of Elements
-     * and simply pass any modification on to every child element
-     */
+    set:
+      /*
+       * Sets appropriate values
+       *
+       * We exchange the ability to modify the Array of Elements
+       * and simply pass any modification on to every child element
+       */
+
+      (target, prop, value) => target.map(el => (el[prop] = value)),
     get: (target, prop) =>
-    /*
-     * Gets appropriate values
-     *
-     * We may want access to Array properties (such as forEach), but
-     * we would also like to be able to call functions on individual
-     * elements (such as addEventListener).
-     *
-     * In addition to functions, we'd like to be able to access
-     * properties (such as textContent).
-     */
+      /*
+       * Gets appropriate values
+       *
+       * We may want access to Array properties (such as forEach), but
+       * we would also like to be able to call functions on individual
+       * elements (such as addEventListener).
+       *
+       * In addition to functions, we'd like to be able to access
+       * properties (such as textContent).
+       */
 
       // Return the property directly if it exists on the Array
       target[prop] ??
