@@ -21,26 +21,13 @@ const $ = q =>
      *
      * In addition to functions, we'd like to be able to access
      * properties (such as textContent).
-     *
-     * The solution we employ here is that when we get an attribute we:
-     *
-     * 1. Return it if it exists on the array
-     * 2. Otherwise, if the array has at least two elements, return a
-     *    wrapper calling the attribute.
-     * 3. Otherwise, return that attribute of the first array element
      */
-    get: (target, prop) => {
+    get: (target, prop) =>
       // Return the property directly if it exists on the Array
-      if (prop in target) {
-        return target[prop]
-      }
-
-      // Return a wrapper function when we have multiple children
-      if (target[1]) {
-        return (...args) => target.map(el => el[prop](...args))
-      }
-
-      // Return the propertry from a child when we only have one
-      return target[0][prop]
-    },
+      target[prop] ??
+      // Return a wrapper if first child property is function
+      (target[0][prop].call
+        ? (...args) => target.map(el => el[prop](...args))
+        : // Return the propertry from a child
+          target[0][prop]),
   })
