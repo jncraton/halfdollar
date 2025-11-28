@@ -36,50 +36,6 @@ $('button').addEventListener('click' () => {
 
 ## API
 
-The following methods and properties interact with the Array of Element objects as an Array:
-
-```js
-at()
-concat()
-copyWithin()
-entries()
-every()
-fill()
-filter()
-find()
-findIndex()
-findLast()
-findLastIndex()
-flat()
-flatMap()
-forEach()
-includes()
-indexOf()
-join()
-keys()
-lastIndexOf()
-map()
-pop()
-push()
-reduce()
-reduceRight()
-reverse()
-shift()
-slice()
-some()
-sort()
-splice()
-toLocaleString()
-toReversed()
-toSorted()
-toSpliced()
-toString()
-unshift()
-values()
-with()
-length
-```
-
 The following methods will pass through to every selected Element object:
 
 ```js
@@ -137,7 +93,7 @@ setPointerCapture()
 toggleAttribute()
 ```
 
-The following properties will be set for all selected Element objects and read from the first selected Element when only a single element is selected:
+The following properties will be set for all selected Element objects and read from the first selected Element:
 
 ```js
 ariaActiveDescendantElement
@@ -222,4 +178,48 @@ scrollWidth
 shadowRoot
 slot
 tagName
+```
+
+The following methods and properties interact with the Array of Element objects as an Array:
+
+```js
+at()
+concat()
+copyWithin()
+entries()
+every()
+fill()
+filter()
+find()
+findIndex()
+findLast()
+findLastIndex()
+flat()
+flatMap()
+forEach()
+includes()
+indexOf()
+join()
+keys()
+lastIndexOf()
+map()
+pop()
+push()
+reduce()
+reduceRight()
+reverse()
+shift()
+slice()
+some()
+sort()
+splice()
+toLocaleString()
+toReversed()
+toSorted()
+toSpliced()
+toString()
+unshift()
+values()
+with()
+length
 ```
